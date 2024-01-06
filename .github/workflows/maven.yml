@@ -51,7 +51,7 @@ jobs:
     #     export_default_credentials: true
 
     - name: Print GCP_SA_KEY content
-      run: cat Dockerfile
+      run: cat https://github.com/MATHANKUMARR/demo/blob/main/Dockerfile
 
     - name: Authenticate with Google Cloud
       run: |

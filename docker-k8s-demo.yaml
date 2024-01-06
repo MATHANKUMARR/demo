@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: docker-k8s-demo
-        image: rmathankumarcpm/demo:latest
+        image: rmathankumarcpm/demo
         ports:
         - containerPort: 8080

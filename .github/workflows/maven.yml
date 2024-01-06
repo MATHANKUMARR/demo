@@ -50,13 +50,6 @@ jobs:
     #     project_id: ${{ secrets.GCP_PROJECT_ID }}
     #     export_default_credentials: true
 
-    - name: Print GCP_SA_KEY content
-      run: cat https://github.com/MATHANKUMARR/demo/blob/main/Dockerfile
-
-    - name: Authenticate with Google Cloud
-      run: |
-        gcloud auth activate-service-account ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
-
     - name: Configure Docker CLI
       run: gcloud auth configure-docker -q
 

@@ -60,11 +60,6 @@ jobs:
     - name: Configure Docker CLI
       run: gcloud auth configure-docker -q
 
-    - name: Install gcloud components
-      run: |
-        gcloud components install kubectl
-        gcloud components install kubectl-credential-gke
-
     - name: Set kubectl context
       run: gcloud container clusters get-credentials docker-k8s-demo --zone us-central1
 

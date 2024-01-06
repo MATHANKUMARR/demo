@@ -50,8 +50,14 @@ jobs:
     #     project_id: ${{ secrets.GCP_PROJECT_ID }}
     #     export_default_credentials: true
 
-    - name: Configure Docker CLI
-      run: gcloud auth configure-docker -q
+    - name: Authentication of GCP
+      run: gcloud auth login
+      
+    - name: Account Set
+      run: gcloud config set account ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
+
+    # - name: Configure Docker CLI
+    #   run: gcloud auth configure-docker -q
 
     - name: Set kubectl context
       run: gcloud container clusters get-credentials docker-k8s-demo --zone us-central1

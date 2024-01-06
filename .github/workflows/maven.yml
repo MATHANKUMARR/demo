@@ -35,7 +35,7 @@ jobs:
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
-        image: rmathankumarcpm/demo:latest
+        image: rmathankumarcpm/demo
         tags: v1, latest
         registry: docker.io
         dockerfile: Dockerfile

@@ -5,7 +5,7 @@ pipeline {
                 steps {
                     echo 'Building the application.......'
                     script {
-                        def test = 2+2 > 3 ? 'Woww... Mathankumar!':'Keep Try...!'
+                        def test = 2+2 > 3 ? 'Woww... Mathankumar Ramasamy!':'Keep Try will solve it...!'
                         echo test
                     }
                 }

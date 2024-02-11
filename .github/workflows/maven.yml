@@ -50,6 +50,16 @@ jobs:
         project_id: ${{ secrets.GCP_PROJECT_ID }}
         export_default_credentials: true
 
+<<<<<<< HEAD
+=======
+    - name: Authenticate with GCP
+      run: |
+        echo "$GCP_SA_KEY" > gcp-key.json
+        gcloud auth activate-service-account --key-file=gcp-key.json
+      env:
+        GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+
+>>>>>>> 5a72c3169eafa0aa1c74f129c899bbfbada4a51f
     - name: Configure Docker CLI
       run: gcloud auth configure-docker -q
 

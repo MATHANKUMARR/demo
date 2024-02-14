@@ -8,5 +8,9 @@ pipeline {
                     bat 'mvn clean install'
                 }
             }
+
+            stage("Build Docker Image"){
+                bat 'docker build -t rmathankumarcpm/demo .'
+            }
         }
 }

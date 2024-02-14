@@ -22,7 +22,7 @@ pipeline {
 
             stage('deploy') {
                 steps {
-                    bat 'mvn jar:jar'
+                    bat 'mvn jar:jar deploy:deploy'
                     bat 'java -jar target/demo.jar &'
                     bat 'timeout /t 10 >nul'
                 }

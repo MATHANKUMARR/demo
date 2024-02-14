@@ -35,6 +35,13 @@
 		</dependency>
 	</dependencies>
 
+	<distributionManagement>
+        <repository>
+            <id>739777362</id>
+            <url>https://github.com/MATHANKUMARR/demo.git</url>
+        </repository>
+    </distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>

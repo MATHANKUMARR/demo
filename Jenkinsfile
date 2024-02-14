@@ -19,5 +19,11 @@ pipeline {
                     bat "mvn jar:jar deploy:deploy"
                 }
             }
+
+            stage('Archive Artifacts') {
+                steps {
+                    archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
+                }
+        }
     }
 }

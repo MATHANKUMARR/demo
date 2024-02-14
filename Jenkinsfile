@@ -1,12 +1,14 @@
 pipeline {
     agent any
         stages {
-            stage('build') {
+            stage('Build') {
                 steps {
-                    echo 'Building the application.......'
-                    script {
-                        def test = 2+2 > 3 ? 'Woww... Mathankumar Ramasamy!':'Keep Try will solve it...!'
-                        echo test
+                    sh 'mvn clean package'
+                }
+                post{
+                    success{
+                        echo 'Archiving the Artifects'
+                        archiveArtifects artifects: '**/target/*.war'
                     }
                 }
             }

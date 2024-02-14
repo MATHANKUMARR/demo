@@ -2,27 +2,10 @@
 pipeline {
     agent any
         stages {
-            stage('Build') {
+            stage('Build Maven') {
                 steps {
-                    bat 'mvn clean install -DskipTests'
-                }
-            }
-
-            stage('test') {
-                steps {
-                    bat 'mvn test'
-                }
-            }
-
-            stage('Archive Artifacts') {
-                steps {
-                    archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
-                }
-            }
-
-            stage('deploy') {
-                steps {
-                    bat 'java -jar target/demo.jar'
+                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/MATHANKUMARR/demo']])
+                    bat 'mvn clean install'
                 }
             }
         }

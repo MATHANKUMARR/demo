@@ -10,13 +10,13 @@ pipeline {
 
             stage('test') {
                 steps {
-                    echo 'Testing the application.......'
+                    bat 'mvn clean test'
                 }
             }
 
             stage('deploy') {
                 steps {
-                    echo 'Deploying the application.......'
+                    bat 'mvn spring-boot:run'
                 }
             }
     }

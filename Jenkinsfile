@@ -8,7 +8,7 @@ pipeline {
                 post{
                     success{
                         echo 'Archiving the Artifects'
-                        archiveArtifects artifects: '**/target/*.war'
+                        archiveArtifects artifects: '*/target/*.jar'
                     }
                 }
             }

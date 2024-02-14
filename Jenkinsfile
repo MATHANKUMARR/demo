@@ -1,15 +1,10 @@
+/* groovylint-disable-next-line CompileStatic */
 pipeline {
     agent any
         stages {
             stage('Build') {
                 steps {
-                    sh 'mvn clean install'
-                }
-                post{
-                    success{
-                        echo 'Archiving the Artifects'
-                        archiveArtifects artifects: '*/target/*.jar'
-                    }
+                    bat 'mvn clean install'
                 }
             }
 

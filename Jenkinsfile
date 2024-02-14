@@ -9,8 +9,12 @@ pipeline {
                 }
             }
 
-            stage("Build Docker Image"){
-                bat 'docker build -t rmathankumarcpm/demo .'
+            stage('Build Docker Image'){
+                steps{
+                    script{
+                        bat 'docker build -t rmathankumarcpm/demo .'
+                    }
+                }
             }
         }
 }

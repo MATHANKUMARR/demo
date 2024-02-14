@@ -21,7 +21,7 @@ pipeline {
                 steps{
                     script{
                         withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                            bat 'docker login -u rmathankumarcpm@gmail.com -p ${dockerhubpwd}'
+                            bat 'docker login -u rmathankumarcpm@gmail.com -p 1#Mathan2024'
 
                             bat 'docker push rmathankumarcpm/demo'
                         }           

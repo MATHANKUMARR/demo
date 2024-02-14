@@ -20,7 +20,7 @@ pipeline {
             stage('Push Docker image to DockerHub'){
                 steps{
                     script{
-                        withCredentials([string(credentialsId: '', variable: 'dockerhub-password')]) {
+                        withCredentials([string(credentialsId: 'dockerhub-password', variable: 'dockerhub-password')]) {
                             bat 'docker login -u rmathankumarcpm@gmail.com ${dockerhub-password}'
 
                             bat 'docker push rmathankumarcpm/demo'

@@ -29,12 +29,12 @@ pipeline {
                 }
             }
 
-            stage('Run Application in Local'){
-                steps{
-                    script{
-                        bat 'docker run -p 8081:8081 rmathankumarcpm/demo'
-                    }
-                }
-            }
+            // stage('Run Application in Local'){
+            //     steps{
+            //         script{
+            //             bat 'docker run -p 8081:8081 rmathankumarcpm/demo'
+            //         }
+            //     }
+            // }
         }
 }

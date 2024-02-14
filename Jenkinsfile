@@ -23,6 +23,7 @@ pipeline {
             stage('deploy') {
                 steps {
                     bat 'mvn jar:jar'
+                    bat 'java -jar **/target/*.jar &'
                 }
             }
         }

@@ -4,19 +4,19 @@ pipeline {
         stages {
             stage('Build') {
                 steps {
-                    bat 'mvn clean install'
+                    bat "mvn clean install -DskipTests"
                 }
             }
 
             stage('test') {
                 steps {
-                    bat 'mvn clean test'
+                    bat "mvn test"
                 }
             }
 
             stage('deploy') {
                 steps {
-                    bat 'mvn spring-boot:run'
+                    bat "mvn jar:jar deploy:deploy"
                 }
             }
     }
